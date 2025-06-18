@@ -34,8 +34,8 @@ User Query → Query Embedding → Vector Search → Context Retrieval → LLM G
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/rag-qa-system.git
-cd rag-qa-system
+git clone https://github.com/sakshi30/document-analysis.git
+cd document-analysis
 ```
 
 2. Install dependencies:
@@ -54,7 +54,6 @@ cp .env.example .env
 Create a `.env` file with the following variables:
 
 ```env
-OPENAI_API_KEY=your_openai_api_key
 VECTOR_DB_PATH=./vector_db
 CHUNK_SIZE=1000
 CHUNK_OVERLAP=200
@@ -63,22 +62,7 @@ MAX_RESULTS=5
 
 ## Usage
 
-### Basic Usage
 
-```python
-from rag_qa import RAGSystem
-
-# Initialize the system
-rag = RAGSystem()
-
-# Add documents to the knowledge base
-rag.add_documents("path/to/documents/")
-
-# Ask questions
-response = rag.query("What is the main topic of the documents?")
-print(response.answer)
-print(response.sources)
-```
 
 ### Command Line Interface
 
@@ -106,26 +90,12 @@ uvicorn api:app --reload
 ## Project Structure
 
 ```
-rag-qa-system/
-├── src/
-│   ├── __init__.py
-│   ├── document_processor.py
-│   ├── embeddings.py
-│   ├── vector_store.py
-│   ├── retriever.py
-│   └── generator.py
-├── data/
-│   └── documents/
-├── tests/
-│   ├── test_document_processor.py
-│   ├── test_embeddings.py
-│   └── test_rag_system.py
-├── notebooks/
-│   └── rag_exploration.ipynb
+document-analysis/
 ├── requirements.txt
 ├── .env.example
 ├── main.py
-├── app.py
+├── TextProcessor.py
+├── RagSystem.py
 └── README.md
 ```
 
@@ -178,31 +148,6 @@ rag-qa-system/
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## Testing
-
-```bash
-# Run all tests
-pytest tests/
-
-# Run with coverage
-pytest tests/ --cov=src/
-
-# Run specific test file
-pytest tests/test_rag_system.py
-```
-
-## Deployment
-
-### Docker
-
-```bash
-# Build image
-docker build -t rag-qa-system .
-
-# Run container
-docker run -p 8000:8000 rag-qa-system
-```
-
 ### Cloud Deployment
 
 The system can be deployed on:
@@ -226,8 +171,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Acknowledgments
 
-- OpenAI for the GPT models and embeddings
-- LangChain for the RAG framework
+- Ollama (Llama3.1) for the GPT models and embeddings
 - The open-source community for various tools and libraries
 
 ## Roadmap
@@ -241,6 +185,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Contact
 
-Your Name - your.email@example.com
+Your Name - sakshidinesh@gmail.com
 
-Project Link: [https://github.com/yourusername/rag-qa-system](https://github.com/yourusername/rag-qa-system)
+Project Link: [https://github.com/sakshi30/document-analysis]
