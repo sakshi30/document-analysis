@@ -68,7 +68,6 @@ async def upload_documents(file: UploadFile = File(...)):
         'name': file.filename,
         'size': len(content),
         'chunk_count': len(chunks),
-        # 'encoding_used': encoding,
         'message': 'Document uploaded and processed successfully'
     }
 
